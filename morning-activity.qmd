@@ -2,6 +2,9 @@
 title: "morning activity"
 format: html
 editor: visual
+execute: 
+  echo: false
+  message: false
 ---
 
 ```{r}
@@ -11,7 +14,17 @@ library(tidyverse)
 
 ```{r}
 fiddler_plot <- ggplot(data = pie_crab, aes(x = size, y = latitude)) +
-  geom_point()
+  geom_jitter(aes(color = latitude)) 
+  #|fig_cap: this is my caption
 
 fiddler_plot
+```
+
+```{r}
+summary <- pie_crab |>
+  group_by(site) |>
+  summarize(mean_size = round(mean(size), 2), 
+            sd_size = round(sd(size), 2),
+            count = n())
+            
 ```
