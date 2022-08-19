@@ -6,6 +6,12 @@ editor: visual
 
 ```{r}
 library(lterdatasampler)
+library(tidyverse)
 ```
 
-hi michelle
+```{r}
+fiddler_plot <- ggplot(data = pie_crab, aes(x = size, y = latitude)) +
+  geom_point()
+
+fiddler_plot
+```
