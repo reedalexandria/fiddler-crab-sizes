@@ -13,6 +13,8 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+The graph below shows the relationship between fiddler crab size in millimeters and latitude throughout the eastern coast of the United States. In general, crab sizes increase toward higher latitude.
+
 ```{r}
 fiddler_plot <- ggplot(data = pie_crab, aes(x = size, y = latitude)) +
   geom_jitter(aes(color = latitude)) 
@@ -20,6 +22,8 @@ fiddler_plot <- ggplot(data = pie_crab, aes(x = size, y = latitude)) +
 
 fiddler_plot
 ```
+
+The table below shows the mean size, standard deviation, and count of fiddler crabs at each Site.
 
 ```{r}
 summary <- pie_crab |>
@@ -33,3 +37,11 @@ summary <- pie_crab |>
 summary
             
 ```
+
+Citation:
+
+-   Johnson, D. 2019. Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 2016. ver 1. Environmental Data Initiative. <https://doi.org/10.6073/pasta/4c27d2e778d3325d3830a5142e3839bb> (Accessed 2021-05-27).
+
+-   Johnson DS, Crowley C, Longmire K, Nelson J, Williams B, Wittyngham S. The fiddler crab, Minuca pugnax, follows Bergmann\'s rule. Ecol Evol. 2019;00:1--9. <https://doi.org/10.1002/ece3.5883>
+
+\
