@@ -10,6 +10,7 @@ execute:
 ```{r}
 library(lterdatasampler)
 library(tidyverse)
+library(kableExtra)
 ```
 
 ```{r}
@@ -25,6 +26,10 @@ summary <- pie_crab |>
   group_by(site) |>
   summarize(mean_size = round(mean(size), 2), 
             sd_size = round(sd(size), 2),
-            count = n())
+            count = n()) |> 
+  kable(col.names = c("Site", "Mean Size (mm)", "Size Standard Deviation (mm)", "Count")) |> 
+  kable_styling(bootstrap_options = "striped")
+  
+summary
             
 ```
