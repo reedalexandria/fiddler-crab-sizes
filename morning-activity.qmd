@@ -1,0 +1,9 @@
+---
+title: "morning activity"
+format: html
+editor: visual
+---
+
+```{r}
+library(lterdatasampler)
+```
